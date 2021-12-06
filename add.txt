@@ -2,4 +2,5 @@ add
 edtied in local
 
 third edit
+local
 remote edit

@@ -27,3 +27,15 @@ git branch -u origin/main main
 ```bash
 git push origin --delete master
 ```
+
+# Cancel Commit
+```
+- commit을 취소하고 해당 파일들은 staged 상태로 워킹 디렉터리에 보존
+$ git reset --soft HEAD^
+- commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에 보존
+$ git reset --mixed HEAD^ // 기본 옵션
+$ git reset HEAD^ // 위와 동일
+$ git reset HEAD~n // 마지막 n개의 commit을 취소
+- commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에서 삭제
+$ git reset --hard HEAD^
+```

@@ -39,3 +39,16 @@ $ git reset HEAD~n // 마지막 n개의 commit을 취소
 - commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에서 삭제
 $ git reset --hard HEAD^
 ```
+
+# Save Credential File
+```bash
+- Credential 정보 반영구로 저장하는 방식
+git config --unset credential.helper [기존에 세팅된 credential.helper 데이터를 해제]
+git config credential.helper store [저장 / 따로 설정해주지 않았다면, ~/.git-credentials에 저장
+
+- Credential 정보를 특정시간동안 git cache에 임시로 저장하는 방식
+git config --unset credential.helper
+git config credential.helper cache
+git config credential.helper 'cache --timeout 7200' [sec 단위, 필요에 따라 변경가능 Default는 900초]
+
+* --global 옵션을 추가할 경우 모든 repository에 적용할 수 있다.

@@ -16,7 +16,13 @@ git branch --merged
 ```bash
 git branch --no-merged
 ```
+
 ### 원격 레포지토리에 있는 브랜치 삭제
 ```bash
 git push origin --delete [브랜치명]
+```
+
+### 브랜치명 변경
+```bash
+git branch --move [원래 브랜치명] [변경할 브랜치명]
 ```

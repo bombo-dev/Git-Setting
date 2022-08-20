@@ -41,3 +41,8 @@ git log HEAD == git log
 git log HEAD~1
 git log HEAD~2
 ```
+
+### 브랜치와 브랜치 사이의 로그 보기
+```bash
+git log [브랜치명]..[브랜치명]
+```

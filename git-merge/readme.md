@@ -44,8 +44,8 @@ git merge --no-ff [브랜치명]
 
 1.
 ```css
-                      master              
-                         ⇣  
+             master              
+               ⇣  
 A <- B <- C <- D <- E <- F ↖︎  
                             ⇡  
                            feature-C  
@@ -69,4 +69,42 @@ A <- B <- C <- D <- E <- F ↖︎ <- <- <-↙️G
                           /*feature-C*/   
 ```     
 > 장점 : Merge 기록을 남길 수 있음  
-> 단점 : 누군가는 지저분하다고 생각 할 수 있음.           
+> 단점 : 누군가는 지저분하다고 생각 할 수 있음. 
+
+---
+## Three-way-merge
+
+1.
+```css
+                              master              
+                                ⇣  
+A <- B <- C <- D <- E <- F ↖︎ <- I  
+                            ↖︎ 
+                              G <- H 
+                                   ⇡ 
+                                feature-C  
+```                     
+
+2.
+```css
+                                        master              
+                                          ⇣  
+A <- B <- C <- D <- E <- F ↖︎ <- I <- <- ↙️ J 
+                            ↖︎        ↙️
+                              G <- H 
+                                   ⇡ 
+                                feature-C  
+```
+
+3.
+```css
+                                        master              
+                                          ⇣  
+A <- B <- C <- D <- E <- F ↖︎ <- I <- <- ↙️ J 
+                            ↖︎        ↙️
+                              G <- H 
+                                   ⇡ 
+                              /*feature-C*/  
+```
+
+> 위와 같이 merge가 Fast-Forward가 불가능한 상황이면 자동으로 --no-ff 가 된다.

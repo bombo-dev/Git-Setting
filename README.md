@@ -61,3 +61,20 @@ git config credential.helper 'cache --timeout 7200' [sec 단위, 필요에 따�
 ```bash
 git push --set-upstream origin [브랜치명]
 ```
+
+# vscode를 이용한 merge
+```bash
+git config --global -e
+```
+
+```ini
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[mergetool]
+	keepBackup = false
+```
+
+>> keepBackup은 mergetool을 이용하여 merge를 하게 됐을때 파일.orig 이라는 백업 파일이 생기게 되는데 이걸 막아주는 것이다.
+

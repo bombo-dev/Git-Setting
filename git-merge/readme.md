@@ -108,3 +108,39 @@ A <- B <- C <- D <- E <- F ↖︎ <- I <- <- ↙️ J
 ```
 
 > 위와 같이 merge가 Fast-Forward가 불가능한 상황이면 자동으로 --no-ff 가 된다.
+
+---
+# Conflict
+- 서로 다른 branch에서 동일한 파일을 수정후에 merge를 하면 conflict가 발생한다.
+```java
+<<<<<<<<<<<<<< HEAD
+내용
+/* 여기까지가 HEAD 포인터의 머지 내용이다. */
+=============== 
+내용
+>>>>>>>>>>>>>> [브랜치명] 
+/* 여기까지가 Merge한 브랜치의 내용이다. */
+```
+
+---
+
+### Merge 취소
+```bash
+git merge --abort
+```
+
+### Merge 계속
+```bash
+git merge [브랜치명]
+
+<Conflict 발생>
+
+Auto-merging main.txt
+CONFLICT (content): Merge conflict in main.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+<Conflict 해결>
+
+git add [conflict 파일]
+git merge --continue
+```

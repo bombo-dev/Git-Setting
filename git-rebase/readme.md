@@ -58,3 +58,39 @@ A <- B <- C <- D <- E <- F <- I       master
 > ### 따라서 혼자 작업하는 브랜치이고 아직 서버에 올리지 않았을 때 Rebase하는 것을 추천한다.
 ---
 ## Rebase --onto
+
+- ### 브랜치 위의 브랜치를 특정 브랜치에 rebase하는 것을 말한다.
+```bash
+git switch [rebase 할 브랜치명]
+git rebase --onto [rebase 목적지 브랜치명] [거쳐가는 브랜치 명] [rebase 할 브랜치명]
+```
+
+1.
+```css
+                              master              
+                                ⇣  
+A <- B <- C <- D <- E <- F ↖︎ <- I    service
+                            ↖︎           ⇣
+                              G <- H <- J 
+                                   ⬆️  
+                                   K <- L
+                                        ⬆️
+                                        UI
+```
+
+2.
+```css
+                                      UI
+                                      ⇣ 
+                                K' <- L'
+                                ⇣           
+A <- B <- C <- D <- E <- F ↖︎ <- I    
+                            ↖︎   ⬆️     
+                             ↖︎ master   service
+                              ↖︎           ⇣
+                                G <- H <- J 
+                                     
+```
+
+> ### 장점 : branch 전체를 rebase를 안하고 merge를 할 수 있다는 장점이 있고, 작업이 오래 걸릴 것 같은거는 두고 미리 끝난 것을 merge할 수 있다.
+> ### 단점 : Rebase의 단점과 동일하다.

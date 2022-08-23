@@ -62,7 +62,7 @@ git config credential.helper 'cache --timeout 7200' [sec 단위, 필요에 따�
 git push --set-upstream origin [브랜치명]
 ```
 
-# vscode를 이용한 merge
+# vscode, p4merge를 이용한 merge
 ```bash
 git config --global -e
 ```
@@ -70,11 +70,18 @@ git config --global -e
 ```ini
 [merge]
 	tool = vscode
+or
+[merge]
+	tool = p4merge
+	
 [mergetool "vscode"]
 	cmd = code --wait $MERGED
+or
+[mergetool "p4merge"]
+	path = [p4merge경로]
 [mergetool]
 	keepBackup = false
 ```
 
->> keepBackup은 mergetool을 이용하여 merge를 하게 됐을때 파일.orig 이라는 백업 파일이 생기게 되는데 이걸 막아주는 것이다.
+> keepBackup은 mergetool을 이용하여 merge를 하게 됐을때 파일.orig 이라는 백업 파일이 생기게 되는데 이걸 막아주는 것이다.
 

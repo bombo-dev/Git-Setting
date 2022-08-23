@@ -144,3 +144,23 @@ Automatic merge failed; fix conflicts and then commit the result.
 git add [conflict 파일]
 git merge --continue
 ```
+---
+# Cherry-pick
+- 다른 브랜치에 있는 하나의 커밋만 따로 뽑아서 가져올 수 있는 기능이다.
+
+```css
+                              master              
+                                ⇣  
+A <- B <- C <- D <- E <- F ↖︎ <- I  
+                            ↖︎ 
+                              G <- H 
+                                   ⇡ 
+                                feature-C  
+```
+### 위와 같은 상황일때 G 커밋만 가지고 오고 싶다면
+
+```bash
+git log -> G의 해시코드 가져오기
+git switch master
+git cherry-pick [G해시코드]
+```

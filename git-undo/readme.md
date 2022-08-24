@@ -29,7 +29,7 @@ git restore --source=[HEAD~n] [파일이름]
 - #### reset은 과거의 이력이 커밋에 안남고 깔끔하게 과거로 돌아간다.
 
 1. staging area에 있는 파일들을 보존하면서, 이전 상태로 되돌리기
-
+- commit의 시점만 변경되고 staging area와 working directory의 상태는 reset --soft하기 이전과 동일하다.
 ```bash
 git reset --soft [해시코드]
 git reset --soft [HEAD~n]
@@ -37,12 +37,14 @@ git reset --soft [HEAD~n]
 
 2. staging area에 있는 파일들을 unstaged 상태로 되돌리기
 - 옵션 작성을 하지 않으면 기본 값이다.
+- commit과 staging area의 시점이 변경된다. 단, working directory의 상태는 reset --mixed하기 이전과 동일하다.
 ```bash
 git reset --mixed [해시코드]
 git reset --mixed [HEAD~n]
 ```
 
 3. 해당 커밋 시점으로 아예 초기화 하기
+- commit을 한 그 시점과 아예 동일하게 commit, staging area, working directory가 초기화 된다.
 ```bash
 git reset --hard [해시코드]
 git reset --hard [HEAD~n]

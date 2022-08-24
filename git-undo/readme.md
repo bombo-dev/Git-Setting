@@ -44,7 +44,7 @@ git reset --mixed [HEAD~n]
 ```
 
 3. 해당 커밋 시점으로 아예 초기화 하기
-- commit을 한 그 시점과 아예 동일하게 commit, staging area, working directory가 초기화 된다.
+- commit을 한 그 시점과 아예 동일하게 commit, staging area, working directory가 초기화 된다. 단, stash를 해두면 stash list는 같이 넘어간다.
 ```bash
 git reset --hard [해시코드]
 git reset --hard [HEAD~n]

@@ -47,3 +47,14 @@ git reset --mixed [HEAD~n]
 git reset --hard [해시코드]
 git reset --hard [HEAD~n]
 ```
+---
+
+### amend
+- #### 커밋의 내용을 변경한다.
+
+1. 커밋 메세지 변경하기
+
+```bash
+git commit --amend -m "[text]"
+git commit --amend (설정한 에디터가 열린다.)
+```

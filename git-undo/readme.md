@@ -64,6 +64,8 @@ git commit --amend (설정한 에디터가 열린다.)
 ### reflog (reference log)
 - #### 지금까지 커밋한 HEAD들을 저장하는 list 이다.
 - 실수로 git reset --hard 를 하더라도 git reflog를 이용하여 되돌아 갈 수 있다. **단, commit을 하지 않았으면 reflog에 저장이 안되기 때문에 조심해야한다.**
+- intellij Ultimate에서는 Git local history를 제공한다. 이를 통해 commit을 하지 않더라도 돌아갈 수 있으며, Visual Studio Code에서는 Extension에서 Local History를 설치해서 사용이 가능하다. **위는 정말 실수했을 경우 하기 위한 대비책이기 때문에 남용하는 것을 권장하지 않는다. commit을 안하고 git reset --hard를 안하는 것이 더더더더더욱 중요하다.**
+
 ```bash
 git reset --hard HEAD~2 -> 실수!
 git reflog

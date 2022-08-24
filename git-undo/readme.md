@@ -60,3 +60,13 @@ git reset --hard [HEAD~n]
 git commit --amend -m "[text]"
 git commit --amend (설정한 에디터가 열린다.)
 ```
+
+### reflog (reference log)
+- #### 지금까지 커밋한 HEAD들을 저장하는 list 이다.
+- 실수로 git reset --hard 를 하더라도 git reflog를 이용하여 되돌아 갈 수 있다. **단, commit을 하지 않았으면 reflog에 저장이 안되기 때문에 조심해야한다.**
+```bash
+git reset --hard HEAD~2 -> 실수!
+git reflog
+커밋의 내용 및 해시코드 확인
+git reset --hard [reflog에서 확인한 해시코드]
+```

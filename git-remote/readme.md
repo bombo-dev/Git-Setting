@@ -13,3 +13,14 @@
 #### git remote show
 - 연결돼있는 서버 명을 확인 할 수 있다.
 
+#### git fetch
+- Server의 history를 local의 history에 가져온다.
+- **HEAD의 포인터는 옮겨지지 않는다.**
+
+#### git pull
+- Server에 있는 history를 가지고 오면서 local의 history도 그대로 반영한다.
+- **HEAD에 있는 포인터도 server에 history와 동일해지기 때문에 conflict가 발생할 수 있고 merge가 이루어진다.**
+
+#### git pull -rebase
+- Server에 있는 history를 가지고 오면서 local의 history도 그대로 반영한다.
+- **단, Fast-Forward merge를 하기 위해 rebase를 하여 기록을 보존한다.**

@@ -85,3 +85,6 @@ or
 
 > keepBackup은 mergetool을 이용하여 merge를 하게 됐을때 파일.orig 이라는 백업 파일이 생기게 되는데 이걸 막아주는 것이다.
 
+# alias log
+- history = log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
+

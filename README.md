@@ -60,6 +60,9 @@ git config credential.helper 'cache --timeout 7200' [sec 단위, 필요에 따�
 
 ```bash
 git push --set-upstream origin [브랜치명]
+
+git push -u origin [브랜치명]
+두 명령어는 동일하다 -u(upstream)
 ```
 
 # vscode, p4merge를 이용한 merge
